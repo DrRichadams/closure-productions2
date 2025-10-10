@@ -1,0 +1,79 @@
+.parallaxSection {
+  position: relative;
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  background-attachment: fixed;
+}
+
+.parallaxVideo {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 120%;
+  object-fit: cover;
+  transform: translateY(-10%);
+  will-change: transform;
+  z-index: 1;
+}
+
+/* Add dark overlay for contrast */
+.overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.6));
+  z-index: 2;
+}
+
+/* Centered text content */
+.textContent {
+  position: relative;
+  z-index: 3;
+  text-align: center;
+  padding: 0 2rem;
+  animation: fadeIn 2s ease-in-out;
+}
+
+.textContent h2 {
+  font-size: 2.5rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+.textContent p {
+  font-size: 1.25rem;
+  margin-bottom: 2rem;
+  opacity: 0.9;
+}
+
+.textContent button {
+  padding: 0.75rem 2rem;
+  font-size: 1rem;
+  background-color: white;
+  color: black;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.textContent button:hover {
+  background-color: #e5e5e5;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
