@@ -3,6 +3,7 @@ import styles from "./page.module.css";
 import Footer from "@/components/footer";
 import Partnerships from "@/components/partnerships";
 import VideoParallax from "@/components/story";
+import Statistics from "@/components/statistics";
 
 export default function Home() {
   return (
@@ -10,6 +11,8 @@ export default function Home() {
       <Banner />
       <VideoParallax />
       <Partnerships />
+
+      <Statistics />
       <div
         style={{
           width: "100%",
@@ -18,7 +21,6 @@ export default function Home() {
           backgroundColor: "#000015",
         }}
       ></div>
-
       <Footer />
     </div>
   );
