@@ -4,6 +4,7 @@ import Footer from "@/components/footer";
 import Partnerships from "@/components/partnerships";
 import VideoParallax from "@/components/story";
 import Statistics from "@/components/statistics";
+import About from "@/components/about-us";
 
 export default function Home() {
   return (
@@ -13,6 +14,7 @@ export default function Home() {
       <Partnerships />
 
       <Statistics />
+      <About />
       <div
         style={{
           width: "100%",
