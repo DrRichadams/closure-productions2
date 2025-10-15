@@ -5,6 +5,7 @@ import Partnerships from "@/components/partnerships";
 import VideoParallax from "@/components/story";
 import Statistics from "@/components/statistics";
 import About from "@/components/about-us";
+import Newsletter from "@/components/newsletter";
 
 export default function Home() {
   return (
@@ -15,6 +16,7 @@ export default function Home() {
 
       <Statistics />
       <About />
+      <Newsletter />
       <div
         style={{
           width: "100%",

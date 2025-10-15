@@ -3,7 +3,6 @@
 import React from "react";
 import styles from "./index.module.css";
 import { motion } from "framer-motion";
-import { s } from "motion/react-client";
 
 export default function Statistics() {
   const container = {

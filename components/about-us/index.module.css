@@ -138,3 +138,17 @@
   object-fit: cover; /* fills the cell while keeping proportions */
   display: block; /* removes bottom whitespace */
 }
+
+.about_btn {
+  padding: 8px 12px;
+  max-width: 200px;
+  width: 100%;
+  border: none;
+  border-radius: 8px;
+  background-color: #24d224;
+  color: #fff;
+  text-transform: uppercase;
+  font-size: 0.7rem;
+  font-weight: 600;
+  cursor: pointer;
+}
