@@ -2,6 +2,8 @@
 
 import styles from "./index.module.css";
 import { motion } from "framer-motion";
+import AnimatedContainer from "../Animations/AnimatedContainer";
+import Link from "next/link";
 
 export default function Featured() {
   const container = {
@@ -25,58 +27,62 @@ export default function Featured() {
   };
 
   return (
-    <div className={styles.featured_container}>
-      <motion.div
-        variants={container}
-        initial="hidden"
-        whileInView="visible"
-        viewport={{ amount: 0.3 }}
-        onViewportLeave={(entry) => {
-          entry?.target?.classList.add("hidden-state");
-        }}
-        className={styles.featured_titles}
-      >
-        <motion.div variants={item} className={styles.main_title_box}>
-          <img src="/icons/jigsaw.png" alt="" />
-          <h3>Featured Services</h3>
-        </motion.div>
-        <motion.p variants={item} className={styles.subtitle}>
-          Explore our highlighted services designed to elevate your experience.
-          Discover top-rated solutions tailored to meet your unique needs and
-          achieve your goals.
-        </motion.p>
-      </motion.div>
-      <motion.div
-        variants={container}
-        initial="hidden"
-        whileInView="visible"
-        viewport={{ amount: 0.3 }}
-        onViewportLeave={(entry) => {
-          entry?.target?.classList.add("hidden-state");
-        }}
-        className={styles.features_listing}
-      >
-        {featured.map((feature) => (
-          <motion.div
-            variants={item}
-            key={feature.id}
-            className={styles.feature_box}
-          >
-            <img src={feature.img} alt="feature image" />
-            <h4>{feature.name}</h4>
-            <p>{feature.description}</p>
-            <div className={styles.feature_btn_box}>
-              <button className={styles.feature_btn}>
-                <img src="/icons/uptrend.png" alt="" />
-              </button>
-            </div>
+    <AnimatedContainer>
+      <div className={styles.featured_container}>
+        <motion.div
+          variants={container}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ amount: 0.3 }}
+          onViewportLeave={(entry) => {
+            entry?.target?.classList.add("hidden-state");
+          }}
+          className={styles.featured_titles}
+        >
+          <motion.div variants={item} className={styles.main_title_box}>
+            <img src="/icons/jigsaw.png" alt="" />
+            <h3>Featured Services</h3>
           </motion.div>
-        ))}
-      </motion.div>
-      <div className={styles.more_services_box}>
-        <button>Explore more services</button>
+          <motion.p variants={item} className={styles.subtitle}>
+            Explore our highlighted services designed to elevate your
+            experience. Discover top-rated solutions tailored to meet your
+            unique needs and achieve your goals.
+          </motion.p>
+        </motion.div>
+        <motion.div
+          variants={container}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ amount: 0.3 }}
+          onViewportLeave={(entry) => {
+            entry?.target?.classList.add("hidden-state");
+          }}
+          className={styles.features_listing}
+        >
+          {featured.map((feature) => (
+            <motion.div
+              variants={item}
+              key={feature.id}
+              className={styles.feature_box}
+            >
+              <img src={feature.img} alt="feature image" />
+              <h4>{feature.name}</h4>
+              <p>{feature.description}</p>
+              <div className={styles.feature_btn_box}>
+                {/* <button className={styles.feature_btn}>
+                  <img src="/icons/uptrend.png" alt="" />
+                </button> */}
+              </div>
+            </motion.div>
+          ))}
+        </motion.div>
+        <div className={styles.more_services_box}>
+          <Link href={"/services"}>
+            <button>Explore more services</button>
+          </Link>
+        </div>
       </div>
-    </div>
+    </AnimatedContainer>
   );
 }
 

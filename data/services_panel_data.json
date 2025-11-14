@@ -1,0 +1,9 @@
+[
+  { "id": 1, "letter": "C", "img": "pot1.jpg" },
+  { "id": 2, "letter": "L", "img": "pot2.jpg" },
+  { "id": 3, "letter": "O", "img": "pot3.jpg" },
+  { "id": 4, "letter": "S", "img": "pot4.jpg" },
+  { "id": 5, "letter": "U", "img": "pot5.jpg" },
+  { "id": 6, "letter": "R", "img": "pot6.jpg" },
+  { "id": 7, "letter": "E", "img": "pot7.jpg" }
+]

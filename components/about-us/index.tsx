@@ -123,7 +123,11 @@ export default function About() {
         </motion.div>
         <motion.div variants={item} className={styles.col6}>
           <div>
-            <img src="/squares/sq4.jpg" alt="square" />
+            <img
+              src="/squares/sq4.jpg"
+              alt="square"
+              className={styles.col6_img1}
+            />
           </div>
           <div>
             <img src="/squares/sq5.jpg" alt="square" />

@@ -1,0 +1,52 @@
+[
+  {
+    "id": 1,
+    "name": "Photography & Videography",
+    "description": "Professional photography and videography services for commercial, editorial, and creative projects — from product and e‑commerce shoots to cinematic film productions and documentaries.",
+    "img": "/services_college/photovid.png",
+    "service_list": [
+      "E-Commerce Photography",
+      "Live Streaming",
+      "Motion Graphics",
+      "Animations",
+      "Video Productions",
+      "Documentaries",
+      "Cinematography",
+      "Movies & Short Films"
+    ]
+  },
+  {
+    "id": 2,
+    "name": "Weddings",
+    "description": "Full-service wedding photography and videography capturing candid moments and cinematic highlights, including edited reels, drone coverage, and custom storytelling packages.",
+    "img": "/services_college/weddings.png",
+    "service_list": [
+      "Wedding Photography",
+      "Wedding Videography",
+      "Reels",
+      "Drone Shots"
+    ]
+  },
+  {
+    "id": 3,
+    "name": "Advertising",
+    "description": "Creative advertising and marketing media production that elevates brands through targeted campaigns, product showcases, and social media content tailored for conversion and engagement.",
+    "img": "/services_college/advertising.png",
+    "service_list": [
+      "Corporate Marketing",
+      "Product Marketing",
+      "Social Media Marketing"
+    ]
+  },
+  {
+    "id": 4,
+    "name": "Music Production",
+    "description": "Comprehensive music production and post‑production services, including music video creation, audio editing, mixing/mastering support, and promotional strategies for artists and labels.",
+    "img": "/services_college/music_production.png",
+    "service_list": [
+      "Music Videos",
+      "Sound and Video Edition",
+      "Music Promoting"
+    ]
+  }
+]
