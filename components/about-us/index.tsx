@@ -40,7 +40,7 @@ const qualities = [
 
 export default function About() {
   return (
-    <div className={styles.about_container}>
+    <div className={styles.about_container} id="about">
       <div className={styles.about_details}>
         <motion.div
           variants={container}

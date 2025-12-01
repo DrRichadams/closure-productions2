@@ -1,3 +1,11 @@
+.services_container {
+  position: relative;
+}
+
+.services_listing_container {
+  padding: 8rem;
+}
+
 .services_banner {
   display: flex;
   gap: 12px;
@@ -39,7 +47,30 @@
 }
 
 .services_listing_box {
-  padding: 12rem;
+  /* padding: 12rem; */
+  margin-top: 3rem;
+}
+
+.services_listing_titles {
+  padding: 1rem 4rem;
+  margin-top: 3rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  text-align: center;
+}
+
+.services_listing_titles h2 {
+  font-weight: 900;
+  text-transform: uppercase;
+  font-size: 2.5rem;
+}
+
+.services_listing_titles p {
+  font-family: roboto;
+  font-weight: 300;
 }
 
 .service_box {
@@ -54,6 +85,11 @@
 
 .service_img {
   width: 100%;
+  /* grid-area: left; */
+}
+
+.service_details {
+  /* grid-area: right; */
 }
 
 .service_list_container {
@@ -76,4 +112,122 @@
 .service_list_box img {
   width: 100%;
   max-width: 20px;
+}
+
+.service_details_title {
+  font-size: 1.6rem;
+  margin-bottom: 0.3rem;
+  color: rgb(0, 98, 255);
+}
+
+.service_details_description {
+  font-weight: 300;
+  line-height: 1.3rem;
+  font-size: 0.95rem;
+  font-family: roboto;
+}
+
+.cta_btn {
+  padding: 8px 12px;
+  border-radius: 8px;
+  border: none;
+  background-color: rgb(70, 210, 70);
+  color: #fff;
+  font-weight: bold;
+  text-transform: uppercase;
+  font-size: 0.7rem;
+  cursor: pointer;
+  transition: all 0.3s ease-in;
+}
+
+.cta_btn:hover {
+  scale: 0.98;
+}
+
+.custom_services {
+  height: 70vh;
+  overflow: hidden;
+  position: relative;
+}
+
+.custom_services img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  filter: blur(2px);
+}
+
+.custome_service_details {
+  background-color: rgba(0, 0, 0, 0.54);
+  width: 100%;
+  height: 100%;
+  position: relative;
+  z-index: 100;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6rem;
+  text-align: center;
+}
+
+.custome_service_details h4 {
+  font-size: 4rem;
+}
+
+.custome_service_details p {
+  max-width: 530px;
+  font-family: roboto;
+  font-weight: 300;
+}
+
+.custome_cta_btn {
+  margin-top: 2rem;
+  width: 200px;
+  height: 50px;
+  border-radius: 12rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: transparent;
+  border: 2px solid #fff;
+  overflow: hidden;
+  padding: 4px;
+  cursor: pointer;
+  transition: all 200ms ease-in;
+}
+
+.custome_cta_btn div {
+  background-color: #fff;
+  border-radius: 12rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+}
+
+.custome_cta_btn div p {
+  font-family: roboto;
+  font-weight: 500;
+  color: rgb(0, 0, 117);
+  text-transform: uppercase;
+  font-size: 0.65rem;
+  transition: all 200ms ease-in;
+}
+
+.custome_cta_btn:hover {
+  padding: 0;
+}
+
+.custome_cta_btn:hover p {
+  text-decoration: underline;
+  color: blue;
+  letter-spacing: 1px;
 }

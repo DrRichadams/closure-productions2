@@ -3,9 +3,36 @@
 import React, { useState, useEffect } from "react";
 import Link from "next/link";
 import styles from "./index.module.css";
+import MainNav from "../navigation/main-nav";
+import { motion, useInView } from "framer-motion";
+import { useRef } from "react";
 
 export default function Banner() {
   const [indices, setIndices] = useState(Array(college.length).fill(0));
+  const ref = useRef(null);
+  const isInView = useInView(ref, { amount: 0.3, once: false });
+  // amount = how much of it must be visible (0–1)
+  // once = false means it triggers both in/out
+
+  const container = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.2,
+        delayChildren: 0.1,
+      },
+    },
+  };
+
+  const item = {
+    hidden: { opacity: 0, y: 30 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: { duration: 0.8, ease: "easeOut" },
+    },
+  };
 
   useEffect(() => {
     // Create one interval per column with random timing
@@ -28,28 +55,71 @@ export default function Banner() {
 
   return (
     <div className={styles.banner}>
-      <Nav />
+      <MainNav />
       <div className={styles.bg_img_box}>
         <img src="/banner/bg.jpg" alt="bg" className={styles.bg_img} />
         <div></div>
       </div>
       <div className={styles.banner_titles_box}>
-        <img src="/cp-white.png" alt="logo" className={styles.banner_logo} />
-        <h1 className={styles.main_title}>Sensational Inspirations</h1>
+        <motion.img
+          initial={{ scale: 0.8, opacity: 0 }}
+          animate={{ scale: 1, opacity: 1 }}
+          transition={{ duration: 0.5, ease: "easeOut" }}
+          src="/cp-white.png"
+          alt="logo"
+          className={styles.banner_logo}
+        />
+        <motion.h1
+          initial={{ scale: 0.8, opacity: 0 }}
+          animate={{ scale: 1, opacity: 1 }}
+          transition={{ duration: 0.5, ease: "easeOut" }}
+          className={styles.main_title}
+        >
+          Sensational Inspirations
+        </motion.h1>
         <div className={styles.banner_subtitle_box}>
           <p>Home of magical moments</p>
         </div>
-        <button className={styles.banner_cta}>Get in touch now</button>
+        <button className={styles.banner_cta}>
+          <div>
+            <p>Get in touch now</p>
+          </div>
+        </button>
         <div className={styles.banner_social_links}>
-          <div></div>
-          <div></div>
-          <div></div>
+          <div className={styles.banner_social_link_box}>
+            <div>
+              <img src="/icons/facebook.png" alt="Facebook" />
+            </div>
+          </div>
+          <div className={styles.banner_social_link_box}>
+            <div>
+              <img src="/icons/instagram.png" alt="Instagram" />
+            </div>
+          </div>
+          <div className={styles.banner_social_link_box}>
+            <div>
+              <img src="/icons/x.png" alt="X" />
+            </div>
+          </div>
         </div>
       </div>
-      <div className={styles.img_grid}>
+      <motion.div
+        className={styles.img_grid}
+        variants={container}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ amount: 0.3 }}
+        onViewportLeave={(entry) => {
+          entry?.target?.classList.add("hidden-state");
+        }}
+      >
         <div className={styles.overlay}></div>
         {college.map((col, colIndex) => (
-          <div key={colIndex} className={styles[`col${colIndex + 1}`]}>
+          <motion.div
+            key={colIndex}
+            className={styles[`col${colIndex + 1}`]}
+            variants={item}
+          >
             {col.map((img, imgIndex) => (
               <img
                 key={imgIndex}
@@ -62,48 +132,11 @@ export default function Banner() {
                 }`}
               />
             ))}
-          </div>
+          </motion.div>
         ))}
-      </div>
+      </motion.div>
       {/* <div className={styles.offset}></div> */}
     </div>
-  );
-}
-
-function Nav() {
-  return (
-    <nav
-      style={{
-        // backgroundColor: "red",
-        position: "absolute",
-        zIndex: 500,
-        width: "100%",
-        top: 0,
-        left: 0,
-        right: 0,
-        padding: "2rem 0",
-      }}
-    >
-      <ul
-        style={{
-          display: "flex",
-          alignItems: "center",
-          justifyContent: "center",
-          gap: "2.5rem",
-          listStyle: "none",
-        }}
-      >
-        <li>
-          <Link href={"/"}>About</Link>
-        </li>
-        <li>
-          <Link href={"/"}>Portifolio</Link>
-        </li>
-        <li>
-          <Link href={"/"}>Contacts</Link>
-        </li>
-      </ul>
-    </nav>
   );
 }
 
