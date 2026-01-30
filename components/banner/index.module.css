@@ -145,7 +145,7 @@
 }
 
 .banner_social_link_box {
-  --box-radius: 60px;
+  --box-radius: 35px;
   width: var(--box-radius);
   height: var(--box-radius);
   border-radius: 50%;
@@ -172,10 +172,10 @@
   width: 80%;
 }
 
-.banner_social_link_box:hover div {
+/* .banner_social_link_box:hover div {
   width: 100%;
   height: 100%;
-}
+} */
 
 .bg_img_box {
   width: 100%;

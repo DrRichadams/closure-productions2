@@ -1,8 +1,12 @@
 "use client";
 
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 
 export default function MainNav() {
+  const pathname = usePathname();
+
+  const isHome = pathname === "/";
   return (
     <nav
       style={{
@@ -26,6 +30,11 @@ export default function MainNav() {
           color: "#fff",
         }}
       >
+        {!isHome && (
+          <li>
+            <Link href={"/"}>Home</Link>
+          </li>
+        )}
         <li>
           <Link href={"/#about"}>About</Link>
         </li>

@@ -7,6 +7,7 @@ import services from "../../data/services.json";
 import Footer from "@/components/footer";
 import MainNav from "@/components/navigation/main-nav";
 import { motion } from "framer-motion";
+import Link from "next/link";
 
 export default function Services() {
   // console.log("panel data: ", panel_data);
@@ -111,9 +112,16 @@ export default function Services() {
                     </div>
                   ))}
                 </div>
-                <button className={styles.cta_btn}>
-                  Contact to get a quote
-                </button>
+                <Link
+                  href={`https://wa.me/263776193195?text=Can I get more information on ${service.name}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center rounded-xl bg-green-500 px-6 py-3 font-semibold text-white hover:bg-green-600 transition"
+                >
+                  <button className={styles.cta_btn}>
+                    Contact to get a quote
+                  </button>
+                </Link>
               </motion.div>
             </motion.div>
           ))}
@@ -128,11 +136,18 @@ export default function Services() {
             to specify what they need and we will curate a service package that
             suits their business needs
           </p>
-          <button className={styles.custome_cta_btn}>
-            <div>
-              <p>Request custome service</p>
-            </div>
-          </button>
+          <Link
+            href={`https://wa.me/263776193195?text=I am in need of some custome service`}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center rounded-xl bg-green-500 px-6 py-3 font-semibold text-white hover:bg-green-600 transition"
+          >
+            <button className={styles.custome_cta_btn}>
+              <div>
+                <p>Request custome service</p>
+              </div>
+            </button>
+          </Link>
         </div>
       </div>
       <div

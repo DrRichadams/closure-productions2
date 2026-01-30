@@ -1,13 +1,14 @@
 "use client";
 
 import React, { useEffect } from "react";
+import Link from "next/link";
 import styles from "./index.module.css";
 
 export default function VideoParallax() {
   useEffect(() => {
     const handleScroll = () => {
       const video = document.querySelector(
-        `.${styles.parallaxVideo}`
+        `.${styles.parallaxVideo}`,
       ) as HTMLVideoElement | null;
       if (video) {
         const offset = window.scrollY * 0.2;
@@ -36,7 +37,9 @@ export default function VideoParallax() {
       <div className={styles.textContent}>
         <h2>Capturing Moments That Inspire</h2>
         <p>Every frame tells a story — yours is waiting to be told.</p>
-        <button>Explore Our Work</button>
+        <Link href={"/services"}>
+          <button>Explore Our Work</button>
+        </Link>
       </div>
     </section>
   );

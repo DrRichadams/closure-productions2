@@ -14,6 +14,8 @@ export default function Banner() {
   // amount = how much of it must be visible (0–1)
   // once = false means it triggers both in/out
 
+  const message = "Hi, can I get more information on your services";
+
   const container = {
     hidden: { opacity: 0 },
     visible: {
@@ -80,27 +82,57 @@ export default function Banner() {
         <div className={styles.banner_subtitle_box}>
           <p>Home of magical moments</p>
         </div>
-        <button className={styles.banner_cta}>
-          <div>
-            <p>Get in touch now</p>
-          </div>
-        </button>
+        <Link
+          href={`https://wa.me/263776193195?text=${message}`}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="inline-flex items-center rounded-xl bg-green-500 px-6 py-3 font-semibold text-white hover:bg-green-600 transition"
+        >
+          <button className={styles.banner_cta}>
+            <div>
+              <p>Get in touch now</p>
+            </div>
+          </button>
+        </Link>
         <div className={styles.banner_social_links}>
-          <div className={styles.banner_social_link_box}>
-            <div>
-              <img src="/icons/facebook.png" alt="Facebook" />
+          <Link
+            href="https://www.facebook.com/closureproductions1"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center rounded-xl bg-blue-600 px-6 py-3 font-semibold text-white hover:bg-blue-700 transition"
+          >
+            <div className={styles.banner_social_link_box}>
+              <div>
+                <img src="/icons/facebook.png" alt="Facebook" />
+              </div>
             </div>
-          </div>
-          <div className={styles.banner_social_link_box}>
-            <div>
-              <img src="/icons/instagram.png" alt="Instagram" />
+          </Link>
+
+          <Link
+            href="https://www.instagram.com/closure_productions_/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center rounded-xl bg-blue-600 px-6 py-3 font-semibold text-white hover:bg-blue-700 transition"
+          >
+            <div className={styles.banner_social_link_box}>
+              <div>
+                <img src="/icons/instagram.png" alt="Instagram" />
+              </div>
             </div>
-          </div>
-          <div className={styles.banner_social_link_box}>
-            <div>
-              <img src="/icons/x.png" alt="X" />
+          </Link>
+
+          <Link
+            href="https://x.com/closureproducti"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center rounded-xl bg-blue-600 px-6 py-3 font-semibold text-white hover:bg-blue-700 transition"
+          >
+            <div className={styles.banner_social_link_box}>
+              <div>
+                <img src="/icons/x.png" alt="X" />
+              </div>
             </div>
-          </div>
+          </Link>
         </div>
       </div>
       <motion.div

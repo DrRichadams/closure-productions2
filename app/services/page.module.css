@@ -231,3 +231,30 @@
   color: blue;
   letter-spacing: 1px;
 }
+
+@media (max-width: 1030px) {
+  .services_listing_container {
+    padding: 5rem;
+  }
+  .service_box {
+    margin-bottom: 3rem;
+  }
+}
+
+@media (max-width: 850px) {
+  .services_listing_container {
+    padding: 5rem 6px;
+  }
+}
+
+@media (max-width: 590px) {
+  .services_listing_container {
+    padding: 1rem;
+  }
+  .service_box {
+    display: flex;
+    flex-direction: column;
+    box-shadow: 2px 2px 12px rgba(0, 0, 0, 0.14);
+    padding: 2rem;
+  }
+}

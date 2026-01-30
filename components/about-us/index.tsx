@@ -1,6 +1,7 @@
 "use client";
 
 import styles from "./index.module.css";
+import Link from "next/link";
 import { motion } from "framer-motion";
 
 const container = {
@@ -33,7 +34,7 @@ const qualities = [
     id: 2,
     title: "Skilled Personnel",
     subtitle:
-      "We have a team to skilled personnel that have years of field experience.",
+      "We have a team of skilled personnel that have years of field experience.",
   },
   { id: 3, title: "Reliability", subtitle: "We deliver what we promise" },
 ];
@@ -119,7 +120,9 @@ export default function About() {
           </div>
           <h3>Explore our services</h3>
           <p>Explore how we can create memorable experiences for you</p>
-          <button className={styles.about_btn}>See more</button>
+          <Link href={"/services"}>
+            <button className={styles.about_btn}>See more</button>
+          </Link>
         </motion.div>
         <motion.div variants={item} className={styles.col6}>
           <div>
