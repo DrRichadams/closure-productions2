@@ -1,9 +1,19 @@
 "use client";
 
 import styles from "./page.module.css";
-import { motion } from "framer-motion";
+import { motion, Variants } from "framer-motion";
 
-export default function Banner_panel({ panel, variants }: any) {
+interface Panel {
+  img: string;
+  letter: string;
+}
+
+interface BannerPanelProps {
+  panel: Panel;
+  variants?: Variants;
+}
+
+export default function BannerPanel({ panel, variants }: BannerPanelProps) {
   return (
     <motion.div className={styles.banner_pannel} variants={variants}>
       <img src={`/banner/potraits/${panel.img}`} alt="panel" />

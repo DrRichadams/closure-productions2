@@ -1,13 +1,28 @@
 "use client";
 
-import { useRef, useEffect } from "react";
+import { useRef, useEffect, ReactNode } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 gsap.registerPlugin(ScrollTrigger);
 
+interface AnimatedContentProps {
+  children: ReactNode;
+  distance?: number;
+  direction?: "vertical" | "horizontal";
+  reverse?: boolean;
+  duration?: number;
+  ease?: string;
+  initialOpacity?: number;
+  animateOpacity?: boolean;
+  scale?: number;
+  threshold?: number;
+  delay?: number;
+  onComplete?: () => void;
+}
+
 const AnimatedContent = ({
-  children: React.ReactNode,
+  children,
   distance = 100,
   direction = "vertical",
   reverse = false,
@@ -19,8 +34,8 @@ const AnimatedContent = ({
   threshold = 0.1,
   delay = 0,
   onComplete,
-}) => {
-  const ref = useRef(null);
+}: AnimatedContentProps) => {
+  const ref = useRef<HTMLDivElement | null>(null);
 
   useEffect(() => {
     const el = ref.current;
@@ -70,14 +85,7 @@ const AnimatedContent = ({
     onComplete,
   ]);
 
-  return (
-    <div
-      
-      ref={ref}
-    >
-      {children}
-    </div>
-  );
+  return <div ref={ref}>{children}</div>;
 };
 
 export default AnimatedContent;
