@@ -58,13 +58,13 @@ export default function Statistics() {
       >
         <motion.div variants={item} className={styles.stat_box}>
           <img src="/stats/users.png" alt="stat icon" />
-          <p className={styles.stat_number}>3k</p>
+          <p className={styles.stat_number}>2k+</p>
           <h3>Our clients</h3>
           <p>Follow thousands of professionals who trust our services</p>
         </motion.div>
         <motion.div variants={item} className={styles.stat_box}>
           <img src="/stats/event.png" alt="stat icon" />
-          <p className={styles.stat_number}>4k</p>
+          <p className={styles.stat_number}>1k+</p>
           <h3>Events completed</h3>
           <p>Quality that comes from repeated service offering</p>
         </motion.div>
