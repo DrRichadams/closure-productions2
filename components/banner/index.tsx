@@ -80,7 +80,7 @@ export default function Banner() {
           Sensational Inspirations
         </motion.h1>
         <div className={styles.banner_subtitle_box}>
-          <p>Home of magical moments</p>
+          <p>Creating Everlasting Memories</p>
         </div>
         <Link
           href={`https://wa.me/263776193195?text=${message}`}

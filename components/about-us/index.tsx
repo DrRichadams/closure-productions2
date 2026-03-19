@@ -9,18 +9,23 @@ const container = {
   visible: {
     opacity: 1,
     transition: {
-      staggerChildren: 0.2,
+      staggerChildren: 0.12,
       delayChildren: 0.1,
     },
   },
 };
 
 const item = {
-  hidden: { opacity: 0, y: 30 },
+  hidden: { opacity: 0, y: 40, scale: 0.96 },
   visible: {
     opacity: 1,
     y: 0,
-    transition: { duration: 0.8, ease: "easeOut" },
+    scale: 1,
+    transition: {
+      type: "spring",
+      stiffness: 80,
+      damping: 18,
+    },
   },
 };
 
@@ -36,21 +41,23 @@ const qualities = [
     subtitle:
       "We have a team of skilled personnel that have years of field experience.",
   },
-  { id: 3, title: "Reliability", subtitle: "We deliver what we promise" },
+  {
+    id: 3,
+    title: "Reliability",
+    subtitle: "We deliver what we promise",
+  },
 ];
 
 export default function About() {
   return (
     <div className={styles.about_container} id="about">
+      {/* LEFT */}
       <div className={styles.about_details}>
         <motion.div
           variants={container}
           initial="hidden"
           whileInView="visible"
-          viewport={{ amount: 0.3 }}
-          onViewportLeave={(entry) => {
-            entry?.target?.classList.add("hidden-state");
-          }}
+          viewport={{ once: true, amount: 0.3 }}
           className={styles.about_details_titles}
         >
           <motion.h2 variants={item}>About Us</motion.h2>
@@ -59,22 +66,20 @@ export default function About() {
             focus on quality, communication, and reliability.
           </motion.p>
         </motion.div>
-        {/* <div className={styles.about_strength}> */}
+
         <motion.div
           variants={container}
           initial="hidden"
           whileInView="visible"
-          viewport={{ amount: 0.3 }}
-          onViewportLeave={(entry) => {
-            entry?.target?.classList.add("hidden-state");
-          }}
+          viewport={{ once: true }}
           className={styles.about_strength}
         >
           {qualities.map((quality) => (
             <motion.div
               variants={item}
-              className={styles.about_quality_box}
+              whileHover={{ x: 6 }}
               key={quality.id}
+              className={styles.about_quality_box}
             >
               <img src="/checkmark.png" alt="icon" />
               <div className={styles.about_titles}>
@@ -85,26 +90,31 @@ export default function About() {
           ))}
         </motion.div>
       </div>
+
+      {/* RIGHT GRID */}
       <motion.div
         variants={container}
         initial="hidden"
         whileInView="visible"
-        viewport={{ amount: 0.3 }}
-        onViewportLeave={(entry) => {
-          entry?.target?.classList.add("hidden-state");
-        }}
+        viewport={{ once: true, amount: 0.2 }}
         className={styles.about_college}
       >
-        <motion.div variants={item} className={styles.col1}>
-          <img src="/squares/sq1.jpg" alt="square" />
-        </motion.div>
-        <motion.div variants={item} className={styles.col2}>
-          <img src="/squares/sq2.jpg" alt="square" />
-        </motion.div>
-        <motion.div variants={item} className={styles.col3}>
-          <img src="/squares/sq3.jpg" alt="square" />
-        </motion.div>
-        <motion.div variants={item} className={styles.col4}>
+        {/* {[1, 2, 3].map((col, i) => (
+          <motion.div
+            key={i}
+            variants={item}
+            whileHover={{ scale: 1.03 }}
+            className={styles[`col${col}`]}
+          >
+            <img src={`/squares/sq${col}.jpg`} alt="square" />
+          </motion.div>
+        ))} */}
+
+        <motion.div
+          variants={item}
+          whileHover={{ scale: 1.02 }}
+          className={styles.col4}
+        >
           <video
             src="/vids/birthday_vid.mp4"
             autoPlay
@@ -112,9 +122,14 @@ export default function About() {
             loop
             playsInline
             className={styles.vid_shell}
-          ></video>
+          />
         </motion.div>
-        <motion.div variants={item} className={styles.col5}>
+
+        <motion.div
+          variants={item}
+          whileHover={{ scale: 1.03 }}
+          className={styles.col5}
+        >
           <div>
             <img src="/trophy.png" alt="icon" />
           </div>
@@ -124,7 +139,12 @@ export default function About() {
             <button className={styles.about_btn}>See more</button>
           </Link>
         </motion.div>
-        <motion.div variants={item} className={styles.col6}>
+
+        <motion.div
+          variants={item}
+          whileHover={{ scale: 1.03 }}
+          className={styles.col6}
+        >
           <div>
             <img
               src="/squares/sq4.jpg"

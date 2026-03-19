@@ -7,6 +7,7 @@ import Statistics from "@/components/statistics";
 import About from "@/components/about-us";
 import Newsletter from "@/components/newsletter";
 import Featured from "@/components/featured";
+import Contact from "@/components/contact/contact";
 
 export default function Home() {
   return (
@@ -17,6 +18,7 @@ export default function Home() {
       <Statistics />
       <About />
       <Featured />
+      <Contact />
       <Newsletter />
       <div
         style={{
